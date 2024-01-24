@@ -1,5 +1,4 @@
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    game.splash("PIRATE MODE!!!")
     mySprite.setImage(img`
         . . . . . . . . . . . . . . . . . 
         . . . . . . 4 f f 4 . . . . . . . 
@@ -19,6 +18,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         . . 3 3 3 3 3 3 3 3 3 3 3 3 3 . . 
         . . . 3 3 3 3 3 3 3 3 3 3 3 . . . 
         `)
+    game.splash("PIRATE MODE!!!")
     play_song()
     sprites.destroy(Ball, effects.confetti, 500)
 })
@@ -891,7 +891,7 @@ mySprite = sprites.create(img`
     . . . 3 3 3 3 3 3 3 3 3 3 3 . . . 
     . . . . 3 3 3 3 3 3 3 3 3 . . . . 
     `, SpriteKind.Player)
-mySprite.setVelocity(game.askForNumber("x speed"), game.askForNumber("Y speed"))
+mySprite.setVelocity(game.askForNumber("x speed", 10), game.askForNumber("Y speed", 10))
 mySprite.setPosition(76, 60)
 mySprite.z = 100
 mySprite.setBounceOnWall(true)
@@ -930,7 +930,7 @@ img`
     `
 ]
 game.onUpdate(function () {
-    for (let index = 0; index < randint(5, 10); index++) {
+    for (let index = 0; index < 1; index++) {
         // here a create a orange and red ball
         Create_ball(list[color_1])
         Create_ball2(list_2[color_1])
