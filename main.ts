@@ -1,3 +1,6 @@
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    sprites.destroy(otherSprite)
+})
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     mySprite.setImage(img`
         . . . . . . . . . . . . . . . . . 
@@ -742,9 +745,6 @@ function add (img1: Image, img2: Image) {
     }
     return img2
 }
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    sprites.destroy(otherSprite)
-})
 let color_1 = 0
 let TempImage2: Image = null
 let tempImage: Image = null
@@ -810,7 +810,7 @@ img`
     `
 ]
 game.onUpdate(function () {
-    for (let index = 0; index < 1; index++) {
+    for (let index = 0; index < randint(0, 10); index++) {
         // here a create a orange and red ball
         Create_ball(list[color_1])
         Create_ball2(list_2[color_1])
